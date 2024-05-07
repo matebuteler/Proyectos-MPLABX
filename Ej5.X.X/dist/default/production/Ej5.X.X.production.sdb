@@ -1,0 +1,105 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F1519 ]
+[d frameptr 6 ]
+"5 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"22 C:\Users\Mateo\OneDriveV\5CICLO\DIGITAL-II\Proyectos-MPLABX\Ej5.X.X\main.c
+[v _disp7seg disp7seg `(v  1 e 1 0 ]
+"32
+[v _multiplex multiplex `(v  1 e 1 0 ]
+"45
+[v _main main `(v  1 e 1 0 ]
+"615 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc\pic16f1519.h
+[v _PORTD PORTD `VEuc  1 e 1 @15 ]
+"1193
+[v _TRISB TRISB `VEuc  1 e 1 @141 ]
+"1317
+[v _TRISD TRISD `VEuc  1 e 1 @143 ]
+"1379
+[v _TRISE TRISE `VEuc  1 e 1 @144 ]
+"1706
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"2479
+[v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
+"2599
+[v _ANSELD ANSELD `VEuc  1 e 1 @399 ]
+"2669
+[v _ANSELE ANSELE `VEuc  1 e 1 @400 ]
+"5249
+[v _RB0 RB0 `VEb  1 e 0 @104 ]
+"5312
+[v _RD0 RD0 `VEb  1 e 0 @120 ]
+"5315
+[v _RD1 RD1 `VEb  1 e 0 @121 ]
+"5318
+[v _RD2 RD2 `VEb  1 e 0 @122 ]
+"5321
+[v _RD3 RD3 `VEb  1 e 0 @123 ]
+"5324
+[v _RD4 RD4 `VEb  1 e 0 @124 ]
+"5327
+[v _RD5 RD5 `VEb  1 e 0 @125 ]
+"5330
+[v _RD6 RD6 `VEb  1 e 0 @126 ]
+"5336
+[v _RE0 RE0 `VEb  1 e 0 @128 ]
+"5339
+[v _RE1 RE1 `VEb  1 e 0 @129 ]
+"20 C:\Users\Mateo\OneDriveV\5CICLO\DIGITAL-II\Proyectos-MPLABX\Ej5.X.X\main.c
+[v _BT_ant BT_ant `i  1 e 2 0 ]
+"21
+[v _i i `i  1 e 2 0 ]
+"45
+[v _main main `(v  1 e 1 0 ]
+{
+"61
+} 0
+"32
+[v _multiplex multiplex `(v  1 e 1 0 ]
+{
+"34
+[v multiplex@unidad unidad `i  1 a 2 2 ]
+"33
+[v multiplex@decena decena `i  1 a 2 0 ]
+"32
+[v multiplex@n n `i  1 p 2 9 ]
+"43
+} 0
+"22
+[v _disp7seg disp7seg `(v  1 e 1 0 ]
+{
+[v disp7seg@n n `i  1 p 2 0 ]
+"30
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 6 ]
+[v ___awmod@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awmod@divisor divisor `i  1 p 2 0 ]
+[v ___awmod@dividend dividend `i  1 p 2 2 ]
+"34
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 7 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 6 ]
+[v ___awdiv@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+"41
+} 0
