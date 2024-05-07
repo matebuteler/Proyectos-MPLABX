@@ -4,7 +4,9 @@
  *
  * Created on April 23, 2024, 12:02 PM
  */
-#include "Header_1.h"
+#include "Header.h" // include processor files - each processor file is guarded.
+#include <xc.h>
+
 #define LED_a RD0
 #define LED_b RD1
 #define LED_c RD2
@@ -51,11 +53,13 @@ void main(void) {
     ANSELB = 0x00; //Puerto B como digital
     ANSELE = 0x00; //Puerto E como digital
     PORTD = 0xFF; //RD0 en 1 (LEDs apagado)
-    while (1){    
-        for (i = 0;(i<100 && BTN == 1 && BT_ant == 0); i++) {
-            multiplex(i);
-            __delay_ms(100);
-            BT_ant = BTN;       
-        }    
+    while (1){
+        multiplex(i);
+        if (BTN && !BT_ant) {
+            i++;
+            if (i==100) i = 0;
+            __delay_ms(50);
+        }
+        BT_ant = BTN;
     }
 }

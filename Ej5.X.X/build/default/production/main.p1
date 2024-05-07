@@ -409,7 +409,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4636
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC12-16F1xxx_DFP/1.7.242/xc8\pic\include\proc\pic16f1519.h: 4636: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"41 ./Header_1.h
+"41 ./Header.h
 [p x FOSC  =  INTOSC     ]
 "42
 [p x WDTE  =  OFF        ]
@@ -439,159 +439,160 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x LPBOR  =  OFF       ]
 "57
 [p x LVP  =  ON          ]
-"20 main.c
-[; ;main.c: 20: int BT_ant = 0;
+"22 main.c
+[; ;main.c: 22: int BT_ant = 0;
 [v _BT_ant `i ~T0 @X0 1 e ]
 [i _BT_ant
 -> 0 `i
 ]
-"21
-[; ;main.c: 21: int i = 0;
+"23
+[; ;main.c: 23: int i = 0;
 [v _i `i ~T0 @X0 1 e ]
 [i _i
 -> 0 `i
 ]
-"22
-[; ;main.c: 22: void disp7seg(int n) {
+"24
+[; ;main.c: 24: void disp7seg(int n) {
 [v _disp7seg `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _disp7seg ]
 [v _n `i ~T0 @X0 1 r1 ]
 [f ]
-"23
-[; ;main.c: 23:     RD0 = (n != 1 && n != 6 && n != 4);
-[e = _RD0 && && != _n -> 1 `i != _n -> 6 `i != _n -> 4 `i ]
-"24
-[; ;main.c: 24:     RD1 = (n != 5 && n != 6);
-[e = _RD1 && != _n -> 5 `i != _n -> 6 `i ]
 "25
-[; ;main.c: 25:     RD2 = (n != 2);
-[e = _RD2 != _n -> 2 `i ]
+[; ;main.c: 25:     RD0 = (n != 1 && n != 6 && n != 4);
+[e = _RD0 && && != _n -> 1 `i != _n -> 6 `i != _n -> 4 `i ]
 "26
-[; ;main.c: 26:     RD3 = (n != 1 && n != 4 && n != 7 && n != 9);
-[e = _RD3 && && && != _n -> 1 `i != _n -> 4 `i != _n -> 7 `i != _n -> 9 `i ]
+[; ;main.c: 26:     RD1 = (n != 5 && n != 6);
+[e = _RD1 && != _n -> 5 `i != _n -> 6 `i ]
 "27
-[; ;main.c: 27:     RD4 = (n != 1 && n != 3 && n != 4 && n != 5 && n != 7 && n != 9);
-[e = _RD4 && && && && && != _n -> 1 `i != _n -> 3 `i != _n -> 4 `i != _n -> 5 `i != _n -> 7 `i != _n -> 9 `i ]
+[; ;main.c: 27:     RD2 = (n != 2);
+[e = _RD2 != _n -> 2 `i ]
 "28
-[; ;main.c: 28:     RD5 = (n != 1 && n != 2 && n != 3 && n != 7);
-[e = _RD5 && && && != _n -> 1 `i != _n -> 2 `i != _n -> 3 `i != _n -> 7 `i ]
+[; ;main.c: 28:     RD3 = (n != 1 && n != 4 && n != 7 && n != 9);
+[e = _RD3 && && && != _n -> 1 `i != _n -> 4 `i != _n -> 7 `i != _n -> 9 `i ]
 "29
-[; ;main.c: 29:     RD6 = (n != 0 && n != 1 && n != 7);
-[e = _RD6 && && != _n -> 0 `i != _n -> 1 `i != _n -> 7 `i ]
+[; ;main.c: 29:     RD4 = (n != 1 && n != 3 && n != 4 && n != 5 && n != 7 && n != 9);
+[e = _RD4 && && && && && != _n -> 1 `i != _n -> 3 `i != _n -> 4 `i != _n -> 5 `i != _n -> 7 `i != _n -> 9 `i ]
 "30
-[; ;main.c: 30: }
+[; ;main.c: 30:     RD5 = (n != 1 && n != 2 && n != 3 && n != 7);
+[e = _RD5 && && && != _n -> 1 `i != _n -> 2 `i != _n -> 3 `i != _n -> 7 `i ]
+"31
+[; ;main.c: 31:     RD6 = (n != 0 && n != 1 && n != 7);
+[e = _RD6 && && != _n -> 0 `i != _n -> 1 `i != _n -> 7 `i ]
+"32
+[; ;main.c: 32: }
 [e :UE 254 ]
 }
-"32
-[; ;main.c: 32: void multiplex(int n) {
+"34
+[; ;main.c: 34: void multiplex(int n) {
 [v _multiplex `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _multiplex ]
 [v _n `i ~T0 @X0 1 r1 ]
 [f ]
-"33
-[; ;main.c: 33:     int decena = n/10;
+"35
+[; ;main.c: 35:     int decena = n/10;
 [v _decena `i ~T0 @X0 1 a ]
 [e = _decena / _n -> 10 `i ]
-"34
-[; ;main.c: 34:     int unidad = n%10;
+"36
+[; ;main.c: 36:     int unidad = n%10;
 [v _unidad `i ~T0 @X0 1 a ]
 [e = _unidad % _n -> 10 `i ]
-"35
-[; ;main.c: 35:     disp7seg(unidad);
-[e ( _disp7seg (1 _unidad ]
-"36
-[; ;main.c: 36:     RE1 = 1;
-[e = _RE1 -> -> 1 `i `b ]
 "37
-[; ;main.c: 37:     _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 37:     disp7seg(unidad);
+[e ( _disp7seg (1 _unidad ]
 "38
-[; ;main.c: 38:     RE1 = 0;
-[e = _RE1 -> -> 0 `i `b ]
+[; ;main.c: 38:     RE1 = 1;
+[e = _RE1 -> -> 1 `i `b ]
 "39
-[; ;main.c: 39:     disp7seg(decena);
-[e ( _disp7seg (1 _decena ]
-"40
-[; ;main.c: 40:     RE0 = 1;
-[e = _RE0 -> -> 1 `i `b ]
-"41
-[; ;main.c: 41:     _delay((unsigned long)((10)*(4000000/4000.0)));
+[; ;main.c: 39:     _delay((unsigned long)((10)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"40
+[; ;main.c: 40:     RE1 = 0;
+[e = _RE1 -> -> 0 `i `b ]
+"41
+[; ;main.c: 41:     disp7seg(decena);
+[e ( _disp7seg (1 _decena ]
 "42
-[; ;main.c: 42:     RE0 = 0;
-[e = _RE0 -> -> 0 `i `b ]
+[; ;main.c: 42:     RE0 = 1;
+[e = _RE0 -> -> 1 `i `b ]
 "43
-[; ;main.c: 43: }
+[; ;main.c: 43:     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"44
+[; ;main.c: 44:     RE0 = 0;
+[e = _RE0 -> -> 0 `i `b ]
+"45
+[; ;main.c: 45: }
 [e :UE 255 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"45
-[; ;main.c: 45: void main(void) {
+"47
+[; ;main.c: 47: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"46
-[; ;main.c: 46:     OSCCON = 0x6A;
-[e = _OSCCON -> -> 106 `i `uc ]
-"47
-[; ;main.c: 47:     TRISD = 0x00;
-[e = _TRISD -> -> 0 `i `uc ]
 "48
-[; ;main.c: 48:     TRISB = 0xFF;
-[e = _TRISB -> -> 255 `i `uc ]
+[; ;main.c: 48:     OSCCON = 0x6A;
+[e = _OSCCON -> -> 106 `i `uc ]
 "49
-[; ;main.c: 49:     TRISE = 0x00;
-[e = _TRISE -> -> 0 `i `uc ]
+[; ;main.c: 49:     TRISD = 0x00;
+[e = _TRISD -> -> 0 `i `uc ]
 "50
-[; ;main.c: 50:     ANSELD = 0x00;
-[e = _ANSELD -> -> 0 `i `uc ]
+[; ;main.c: 50:     TRISB = 0xFF;
+[e = _TRISB -> -> 255 `i `uc ]
 "51
-[; ;main.c: 51:     ANSELB = 0x00;
-[e = _ANSELB -> -> 0 `i `uc ]
+[; ;main.c: 51:     TRISE = 0x00;
+[e = _TRISE -> -> 0 `i `uc ]
 "52
-[; ;main.c: 52:     ANSELE = 0x00;
-[e = _ANSELE -> -> 0 `i `uc ]
+[; ;main.c: 52:     ANSELD = 0x00;
+[e = _ANSELD -> -> 0 `i `uc ]
 "53
-[; ;main.c: 53:     PORTD = 0xFF;
-[e = _PORTD -> -> 255 `i `uc ]
+[; ;main.c: 53:     ANSELB = 0x00;
+[e = _ANSELB -> -> 0 `i `uc ]
 "54
-[; ;main.c: 54:     while (1){
+[; ;main.c: 54:     ANSELE = 0x00;
+[e = _ANSELE -> -> 0 `i `uc ]
+"55
+[; ;main.c: 55:     PORTD = 0xFF;
+[e = _PORTD -> -> 255 `i `uc ]
+"56
+[; ;main.c: 56:     while (1){
 [e :U 258 ]
 {
-"55
-[; ;main.c: 55:         for (i = 0;(i<100 && RB0 == 1 && BT_ant == 0); i++) {
-{
-[e = _i -> 0 `i ]
-[e $U 263  ]
-[e :U 260 ]
-{
-"56
-[; ;main.c: 56:             multiplex(i);
-[e ( _multiplex (1 _i ]
 "57
-[; ;main.c: 57:             _delay((unsigned long)((100)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 57:         multiplex(i);
+[e ( _multiplex (1 _i ]
 "58
-[; ;main.c: 58:             BT_ant = RB0;
-[e = _BT_ant -> _RB0 `i ]
+[; ;main.c: 58:         if (RB0 && !BT_ant) {
+[e $ ! && _RB0 ! != _BT_ant -> 0 `i 260  ]
+{
 "59
-[; ;main.c: 59:         }
-}
+[; ;main.c: 59:             i++;
 [e ++ _i -> 1 `i ]
-[e :U 263 ]
-[e $ && && < _i -> 100 `i == -> _RB0 `i -> 1 `i == _BT_ant -> 0 `i 260  ]
-[e :U 261 ]
-}
 "60
-[; ;main.c: 60:     }
+[; ;main.c: 60:             if (i==100) i = 0;
+[e $ ! == _i -> 100 `i 261  ]
+[e = _i -> 0 `i ]
+[e :U 261 ]
+"61
+[; ;main.c: 61:             _delay((unsigned long)((50)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"62
+[; ;main.c: 62:         }
+}
+[e :U 260 ]
+"63
+[; ;main.c: 63:         BT_ant = RB0;
+[e = _BT_ant -> _RB0 `i ]
+"64
+[; ;main.c: 64:     }
 }
 [e :U 257 ]
 [e $U 258  ]
 [e :U 259 ]
-"61
-[; ;main.c: 61: }
+"65
+[; ;main.c: 65: }
 [e :UE 256 ]
 }

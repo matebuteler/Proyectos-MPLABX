@@ -13,8 +13,8 @@
 
 
 
-# 1 "./Header_1.h" 1
-# 34 "./Header_1.h"
+# 1 "./Header.h" 1
+# 34 "./Header.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -3272,7 +3272,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
-# 34 "./Header_1.h" 2
+# 34 "./Header.h" 2
 
 
 
@@ -3298,7 +3298,7 @@ extern __bank0 __bit __timeout;
 #pragma config LPBOR = OFF
 #pragma config LVP = ON
 # 7 "main.c" 2
-# 20 "main.c"
+# 22 "main.c"
 int BT_ant = 0;
 int i = 0;
 void disp7seg(int n) {
@@ -3334,10 +3334,12 @@ void main(void) {
     ANSELE = 0x00;
     PORTD = 0xFF;
     while (1){
-        for (i = 0;(i<100 && RB0 == 1 && BT_ant == 0); i++) {
-            multiplex(i);
-            _delay((unsigned long)((100)*(4000000/4000.0)));
-            BT_ant = RB0;
+        multiplex(i);
+        if (RB0 && !BT_ant) {
+            i++;
+            if (i==100) i = 0;
+            _delay((unsigned long)((50)*(4000000/4000.0)));
         }
+        BT_ant = RB0;
     }
 }
