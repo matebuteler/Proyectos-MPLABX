@@ -13,7 +13,7 @@
 #define BTN RB0
 #define _XTAL_FREQ 4000000
 
-int BT_ant = 0, int i = 0;
+int BT_ant = 0, i = 0;
 
 void disp7seg(int n) {
     LED_a = (n != 1 && n != 6 && n != 4);
